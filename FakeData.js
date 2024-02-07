@@ -147,4 +147,57 @@ const UserList = [
   },
 ];
 
-module.exports = { UserList };
+const movieList = [
+  {
+    title: "The Midnight Express",
+    year: 2005,
+    id: 1001,
+  },
+  {
+    title: "Echoes of Eternity",
+    year: 2018,
+    id: 1002,
+  },
+  {
+    title: "Dreamscape",
+    year: 1992,
+    id: 1003,
+  },
+  {
+    title: "Shadowland",
+    year: 2015,
+    id: 1004,
+  },
+  {
+    title: "Neon Nights",
+    year: 1987,
+    id: 1005,
+  },
+  {
+    title: "Twilight's Embrace",
+    year: 2022,
+    id: 1006,
+  },
+  {
+    title: "Whispers in the Dark",
+    year: 2008,
+    id: 1007,
+  },
+  {
+    title: "Starfall",
+    year: 1999,
+    id: 1008,
+  },
+  {
+    title: "Eternal Echoes",
+    year: 2010,
+    id: 1009,
+  },
+  {
+    title: "Fires of Redemption",
+    year: 2001,
+    id: 1010,
+  },
+];
+
+module.exports = { UserList, movieList };
