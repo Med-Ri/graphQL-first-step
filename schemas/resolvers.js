@@ -25,6 +25,15 @@ const resolvers = {
     }
    
   },
+
+  User: {
+    favMovies: () => {
+      return _.filter(movieList, (movie)=> movie.year < 2000 )
+    }
+  }
+
+
+
 };
 
 module.exports = { resolvers };
