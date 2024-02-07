@@ -49,6 +49,7 @@ const UserList = [
         nationality: "Mexican",
       },
     ],
+    favMovies: [{id : 1010} , {id: 1003} ]
   },
   {
     id: 2,

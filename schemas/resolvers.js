@@ -27,13 +27,14 @@ const resolvers = {
   },
 
   User: {
-    favMovies: () => {
-      return _.filter(movieList, (movie)=> movie.year < 2000 )
+    favMovies: (parent, args) => {
+      const moviesIds = parent?.favMovies?.map(movie => movie.id);
+      if (!moviesIds || !Array.isArray(moviesIds)) {
+        return [];
+      }
+      return _.filter(movieList, (movie) => moviesIds.includes(movie.id));
     }
   }
-
-
-
 };
 
 module.exports = { resolvers };
