@@ -12,7 +12,7 @@ const QUERY_ALL_USERS = gql`
   }
 `;
 
-const DisplayData = () => {
+const UsersData = () => {
   const { data, loading , error } = useQuery(QUERY_ALL_USERS);
 
   if (loading) {
@@ -26,6 +26,7 @@ const DisplayData = () => {
 
   return( 
     <div>
+        <h1> List of users </h1>
         {
             data && data?.users?.map ((user) => {
                 return (
@@ -44,4 +45,4 @@ const DisplayData = () => {
   );
 };
 
-export default DisplayData;
+export default UsersData;
