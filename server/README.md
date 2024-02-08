@@ -60,4 +60,37 @@
       }
   }</code>
   </pre>
+
+   <li>Test the <code>CreateNewUser</code> mutation:</li>
+  <pre>
+  <code>mutation CreateNewUser($input: CreateUserInput!) {
+  createUser(input: $input) {
+    name
+    userName
+    age
+  }
+}</code>
+  </pre>
+
+  <li>Test the <code>UpdateUserName</code> mutation:</li>
+  <pre>
+  <code>mutation UpdateUserName ($updateUserNameInput: UpdateUserNameInput!) {
+  updateUserName (input: $updateUserNameInput) {
+    id
+    userName
+  }
+}</code>
+  </pre>
+
+  <li>Test the <code>deleteUser</code> mutation:</li>
+  <pre>
+  <code>mutation deleteUser ($deleteUserId: ID!) {
+  deleteUser(id: $deleteUserId){
+    id
+  }
+}</code>
+  </pre>
+
+
+  
 </ol>
