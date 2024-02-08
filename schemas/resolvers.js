@@ -34,7 +34,19 @@ const resolvers = {
       }
       return _.filter(movieList, (movie) => moviesIds.includes(movie.id));
     }
+  },
+
+  Mutation: {
+    createUser: (parent, args) => {
+      const user = args.input;
+      //incrementId
+      const lastId = UserList[UserList.length-1].id;
+      user.id = lastId + 1;
+      UserList.push(user);
+      return user
+    }
   }
+
 };
 
 module.exports = { resolvers };
