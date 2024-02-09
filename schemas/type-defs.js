@@ -29,7 +29,7 @@ const typeDefs = gql`
 
     type Query {
         movies: [Movie!]!
-        movieByTitle(title: String!): Movie
+        movieByTitle(title: String!): Movie!
     }
     
     input CreateUserInput {
