@@ -4,6 +4,7 @@ import { useQuery, gql, useMutation } from "@apollo/client";
 const QUERY_ALL_USERS = gql`
   query GetAllUsers {
     users {
+      id
       name
       userName
       age
@@ -18,8 +19,6 @@ const CREATE_USER_MUTATION = gql`
       name
       id
     }
-  
-  
   }
 
 
@@ -28,7 +27,7 @@ const CREATE_USER_MUTATION = gql`
 `
 
 const UsersData = () => {
-  const { data, loading , error } = useQuery(QUERY_ALL_USERS);
+  const { data, loading , error, refetch } = useQuery(QUERY_ALL_USERS);
 
   const [name , setName] = useState('');
   const [userName, setUserName] = useState('');
@@ -91,7 +90,8 @@ const UsersData = () => {
                   userName,
                   age,
                   nationality
-                }}})
+                }}});
+                refetch()
               }}
             > 
               Add New User 
@@ -111,6 +111,7 @@ const UsersData = () => {
                     <div key={i}>
                         <hr></hr>
                         <h1> {user?.name} </h1>
+                        <h2> ID : {user?.id} </h2>
                         <h2> User_Name : {user?.userName} </h2>
                         <h2> Age: {user?.age} </h2>
                         <h2> Nationality : {user?.nationality} </h2>
