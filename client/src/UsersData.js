@@ -28,9 +28,9 @@ const UsersData = () => {
     <div>
         <h1> List of users </h1>
         {
-            data && data?.users?.map ((user) => {
+            data && data?.users?.map ((user , i) => {
                 return (
-                    <div>
+                    <div key={i}>
                         <hr></hr>
                         <h1> {user?.name} </h1>
                         <h2> User_Name : {user?.userName} </h2>
